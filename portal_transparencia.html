@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portal de Transparencia - MUNLIMA</title>
+
+    <style>
+        /* Estilos para el formulario de acceso a la información */
+        #informacionSolicitada {
+            margin-top: 20px;
+        }
+
+        #informacionSolicitada h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        #informacionSolicitadaForm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        #informacionSolicitadaForm label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #descripcionSolicitud,
+        #observaciones {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        #entidadInformacion,
+        #entregaInformacion {
+            width: calc(100% - 20px); /* Considerando el espacio para el borde */
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para el campo de adjuntar archivo (puedes personalizar según tus necesidades) */
+        #adjuntarArchivo {
+            margin-top: 20px;
+        }
+
+        /* Estilos para el botón de enviar */
+        #btnEnviar {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #btnEnviar:hover {
+            background-color: #2980b9;
+        }
+
+            
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="escudo de lima.jpg" alt="Logo del Ministerio de Transportes y Comunicaciones">
+            </div>
+            
+            <div class="lema">
+                <p>Hacia una Lima más sostenible y participativa</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="portal_transparencia.html">Portal de Transparencia</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="portalTransparencia" class="row">
+        <div class="seccion">
+            <h2>Portal de Transparencia Estándar - MUNLIMA</h2>
+            <div class="responsable">
+                <h3>Responsable del Portal de Transparencia</h3>
+                <p>Castillo Pantoja, Erika Nancy</p>
+                <p>Nombramiento: Resolución de Alcaldía N° 255 - 2023</p>
+                <p>Correo: <a href="mailto:erika.castillo@munlima.gob.pe">erika.castillo@munlima.gob.pe</a></p>
+                <p>Teléfono: 632-1300 Anexo 1474</p>
+            </div>
+
+            <div class="responsable">
+                <h3>Responsable de acceso a la información</h3>
+                <p>Raúl Antonio Carranza Castagnola</p>
+                <p>Nombramiento: Resolución de Alcaldía N° 121 - 2023</p>
+                <p>Correo: <a href="mailto:raul.carranza@munlima.gob.pe">raul.carranza@munlima.gob.pe</a></p>
+                <p>Teléfono: 632-1300</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="formularioAccesoInformacion" class="row">
+        <h2>FORMULARIO DE ACCESO A LA INFORMACIÓN</h2>
+        <p>Todos los campos que tengan el asterisco (*) son de carácter obligatorio</p>
+        
+        <!-- I. DATOS DEL SOLICITANTE -->
+        <div id="datosSolicitante">
+            <h3>I. DATOS DEL SOLICITANTE</h3>
+            <form id="accesoInformacionForm">
+                <label for="tipoDocumento">TIPO DOCUMENTO *</label>
+                <select id="tipoDocumento" name="tipoDocumento" required>
+                    <option value="DNI">DNI (Documento Nacional de Identidad)</option>
+                    <option value="RUC">RUC (Registro Único de Contribuyentes)</option>
+                    <option value="LibretaMilitar">Libreta Militar</option>
+                    <option value="CarnetExtranjeria">Carnet de Extranjería</option>
+                <input type="text" id="numeroDocumento" name="numeroDocumento" required>
+                
+                </select>
+                                 
+                
+                <label for="departamento">DEPARTAMENTO *</label>
+                <input type="text" id="departamento" name="departamento" required>
+                
+                <label for="provincia">PROVINCIA *</label>
+                <input type="text" id="provincia" name="provincia" required>
+                
+                <label for="distrito">DISTRITO *</label>
+                <input type="text" id="distrito" name="distrito" required>
+                
+                <label for="urbanizacion">URBANIZACIÓN *</label>
+                <input type="text" id="urbanizacion" name="urbanizacion" required>
+                
+                <label for="direccion">AV/CALLE/JR/PSJ *</label>
+                <input type="text" id="direccion" name="direccion" required>
+                
+                <label for="numeroDpto">N°/DPTO/INT *</label>
+                <input type="text" id="numeroDpto" name="numeroDpto" required>
+                
+                <label for="correo">CORREO *</label>
+                <input type="email" id="correo" name="correo" required>
+                
+                <label for="correoAlternativo">CORREO ALTERNATIVO</label>
+                <input type="email" id="correoAlternativo" name="correoAlternativo">
+                
+                <label for="telefonoFijo">TLF. FIJO</label>
+                <input type="text" id="telefonoFijo" name="telefonoFijo">
+                
+                <label for="celular">CELULAR *</label>
+                <input type="text" id="celular" name="celular" required>
+            </form>
+        </div>
+        
+        <!-- II. INFORMACIÓN SOLICITADA -->
+        <div id="informacionSolicitada">
+            <h3>II. INFORMACIÓN SOLICITADA</h3>
+            <form id="informacionSolicitadaForm">
+                <label for="descripcionSolicitud">DESCRIPCIÓN *</label>
+                <textarea id="descripcionSolicitud" name="descripcionSolicitud" rows="4" required></textarea>
+        
+                <label for="entidadInformacion">ENTIDAD DE LA CUAL SE REQUIERE LA INFORMACIÓN</label>
+                <select id="entidadInformacion" name="entidadInformacion">
+                    <option value="opcion1">Opción 1</option>
+                    <option value="opcion2">Opción 2</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+        
+                <label for="entregaInformacion">ENTREGA DE LA INFORMACIÓN *</label>
+                <select id="entregaInformacion" name="entregaInformacion" required>
+                    <option value="correoElectronico">Correo Electrónico</option>
+                    <option value="entregaPresencial">Entrega Presencial</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+        
+                <label for="observaciones">OBSERVACIONES (Máximo 400 caracteres)</label>
+                <textarea id="observaciones" name="observaciones" rows="4" maxlength="400"></textarea>
+            </form>
+        </div>
+        
+        <!-- III. DOCUMENTO ADJUNTO -->
+        <div id="documentoAdjunto">
+            <h3>III. DOCUMENTO ADJUNTO</h3>
+            <form id="documentoAdjuntoForm">
+                <label for="adjuntarArchivo">ADJUNTAR ARCHIVO</label>
+                <input type="file" id="adjuntarArchivo" name="adjuntarArchivo" accept=".pdf" required>
+                <p>Solo se acepta un archivo a la vez en formatos PDF con un peso máximo de 10 MB (Si desea enviar múltiples imágenes, cree un archivo PDF con todas ellas y adjunte el PDF).</p>
+            </form>
+        </div>
+        
+        <p>Si desea ingresar su solicitud de manera presencial, descargue el formulario <a href="link_a_tu_formulario_presencial.pdf" target="_blank">aquí</a> y preséntelo por mesa de partes.</p>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="contacto">
+                <p>Ubicación: Av. Principal 123, Lima, Perú</p>
+                <p>Teléfono de Contacto: +51 987 654 321</p>
+            </div>
+            <div class="redes-sociales">
+                <<a href="https://www.facebook.com/MuniLima" target="_blank">Facebook</a>
+                <a href="https://twitter.com/MuniLima?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/munlima/?hl=es" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
