@@ -80,5 +80,32 @@
             </form>
         </div>
 
+        <div class="seccion" id="denuncia">
+            <img src="denuncia.png" alt="Denuncia Ciudadana Icon">
+            <h2>Denuncia Ciudadana</h2>
+            <p>Ayúdanos a mantener la seguridad y el orden en nuestro distrito.</p>
+            <button id="openDenunciaForm">Presentar Denuncia</button>
+            <div id="denunciaForm" style="display: none;">
+                <form>
+                    <label for="tipoDenuncia">Tipo de Denuncia:</label>
+                    <select id="tipoDenuncia" name="tipoDenuncia">
+                        <option value="ruido">Ruido</option>
+                        <option value="basura">Acumulación de Basura</option>
+                        <option value="seguridad">Seguridad Ciudadana</option>
+                        <option value="seguridad">Corrupción</option>
+                    </select>
+
+                    <label for="fechaHoraDenuncia">Fecha y Hora de Denuncia:</label>
+                    <input type="datetime-local" id="fechaHoraDenuncia" name="fechaHoraDenuncia" required>
+
+                    <label for="detalleDenuncia">Detalle:</label>
+                    <textarea id="detalleDenuncia" name="detalleDenuncia" rows="4" required></textarea>
+
+                    <button type="button" onclick="submitDenuncia()">Enviar Denuncia</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
